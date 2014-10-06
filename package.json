@@ -1,0 +1,15 @@
+{
+  "name": "unfinished-asteroids",
+  "version": "0.0.1",
+  "description": "Unfinished Asteroids Game",
+  "homepage": "https://github.com/rezoner/unfinished-asteroids",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dub4u/unfinished-asteroids.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^1.5.2",
+    "gulp": "^3.8.8"
+  }
+}
