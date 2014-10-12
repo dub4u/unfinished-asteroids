@@ -88,6 +88,8 @@ ENGINE.Player.prototype = {
 
   shoot: function() {
 
+    app.playSound("shoot");
+
     this.collection.add(ENGINE.Bullet, {
       x: this.x,
       y: this.y,
@@ -95,7 +97,6 @@ ENGINE.Player.prototype = {
       team: this.team,
       damage: 1
     });
-
   },
 
   step: function(delta) {
