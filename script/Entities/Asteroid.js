@@ -35,6 +35,9 @@ ENGINE.Asteroid.prototype = {
 
     if (this.hp <= 0) {
 
+      app.playSound("asteroid-crush");
+      app.game.players[0].score += 1;
+
       if (this.splits) this.split();
 
       this.collection.remove(this);
@@ -43,8 +46,6 @@ ENGINE.Asteroid.prototype = {
   },
 
   split: function() {
-
-    app.playSound("asteroid-crush");
 
     for (var i = 0; i < 2; i++) {
       this.collection.add(ENGINE.Asteroid, {

@@ -22,8 +22,10 @@ ENGINE.Player = function(args) {
     cooldown: 0,
     maxCooldown: 0.3,
 
+    /* damage and score */
     hp: 10,
-    maxHp: 10
+    maxHp: 10,
+    score: 0
 
   }, args);
 
