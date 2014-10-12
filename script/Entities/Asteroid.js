@@ -38,7 +38,14 @@ ENGINE.Asteroid.prototype = {
       app.playSound("asteroid-crush");
       app.game.players[0].score += 1;
 
-      if (this.splits) this.split();
+      if (this.splits) {
+        this.split();
+      } else {
+        this.collection.add(ENGINE.Coin, {
+          x: this.x,
+          y: this.y
+        });
+      }
 
       this.collection.remove(this);
     }
