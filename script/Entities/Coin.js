@@ -14,7 +14,10 @@ ENGINE.Coin.prototype = {
 
   collision: function(object) {
     if (object instanceof ENGINE.Player) {
-      object.score += 5;
+      object.give({
+        points: 5,
+        health: 1
+      });
       this.collection.remove(this);
     }
   },

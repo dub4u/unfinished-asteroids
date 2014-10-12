@@ -88,6 +88,14 @@ ENGINE.Player.prototype = {
     }
   },
 
+  give: function(data) {
+    this.score += data.points;
+    if (this.hp < this.maxHp) {
+      this.hp += data.health;
+    }
+  },
+
+
   shoot: function() {
 
     app.playSound("shoot");
