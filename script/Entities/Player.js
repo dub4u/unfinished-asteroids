@@ -101,6 +101,7 @@ ENGINE.Player.prototype = {
     app.playSound("shoot");
 
     this.collection.add(ENGINE.Bullet, {
+      shooter: this,
       x: this.x,
       y: this.y,
       direction: this.direction,
