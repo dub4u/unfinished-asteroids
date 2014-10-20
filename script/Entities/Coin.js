@@ -10,7 +10,11 @@ ENGINE.Coin.prototype = {
 
   constructor: ENGINE.Coin,
   collidable: true,
-  radius: 3,
+  radius: 5,
+  duration: 1,
+  frames: 7,
+  frame: 0,
+  timer: 0,
 
   collision: function(object) {
     if (object instanceof ENGINE.Player) {
@@ -23,10 +27,13 @@ ENGINE.Coin.prototype = {
   },
 
   step: function(delta) {
+    this.timer += delta;
+    this.frame = this.frames * (this.timer % this.duration / this.duration) | 0;
   },
 
   render: function(delta) {
-    app.layer.fillStyle("#ff0").fillCircle(this.x, this.y, this.radius);
+    var sprite = [this.frame * 10, 0, 10, 10];
+    app.layer.drawRegion(app.images.coins, sprite, this.x, this.y);
   }
 
 };
