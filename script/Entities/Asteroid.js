@@ -41,10 +41,18 @@ ENGINE.Asteroid.prototype = {
       if (this.splits) {
         this.split();
       } else {
-        this.collection.add(ENGINE.Coin, {
-          x: this.x,
-          y: this.y
-        });
+        var spawn = ENGINE.Coin,
+            opts = {
+              x: this.x,
+              y: this.y
+            };
+
+        if (Math.random() < .25) {
+          spawn = ENGINE.Powerup;
+          opts.type = 'medikit';
+        }
+
+        this.collection.add(spawn, opts);
       }
 
       this.collection.remove(this);

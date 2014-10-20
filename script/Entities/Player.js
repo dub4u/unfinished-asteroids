@@ -92,6 +92,19 @@ ENGINE.Player.prototype = {
     this.score += points;
   },
 
+  powerup: function(powerup) {
+    if (powerup.type === 'medikit') {
+      if (this.hp < this.maxHp) {
+
+        var addHp = this.maxHp / 2;
+
+        this.hp = Math.min(this.maxHp, this.hp + addHp);
+
+        powerup.remove();
+      }
+    }
+  },
+
   shoot: function() {
 
     app.playSound("shoot");
