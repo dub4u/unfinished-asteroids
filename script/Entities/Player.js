@@ -88,13 +88,9 @@ ENGINE.Player.prototype = {
     }
   },
 
-  give: function(data) {
-    this.score += data.points;
-    if (this.hp < this.maxHp) {
-      this.hp += data.health;
-    }
+  addPoints: function(points) {
+    this.score += points;
   },
-
 
   shoot: function() {
 
